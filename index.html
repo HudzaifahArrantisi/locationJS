@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lokasi GPS + Peta</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f0f0f0;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 800px;
+      margin: auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    #map {
+      height: 300px;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+    h2 {
+      text-align: center;
+    }
+    p {
+      margin: 8px 0;
+    }
+    span {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Info Lokasi + Peta</h2>
+    <p>IP Address: <span id="ip">Memuat...</span></p>
+    <p>User-Agent: <span id="ua"></span></p>
+    <p>Latitude: <span id="lat">-</span></p>
+    <p>Longitude: <span id="lon">-</span></p>
+    <p>Keakuratan Lokasi: <span id="accuracy">-</span></p>
+    <p>Alamat: <span id="location">Memuat...</span></p>
+    <div id="map"></div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
