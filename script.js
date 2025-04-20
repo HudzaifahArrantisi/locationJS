@@ -1,6 +1,5 @@
 document.getElementById("ua").textContent = navigator.userAgent;
 
-// Ambil IP Address
 fetch("https://ipapi.co/json/")
   .then(res => res.json())
   .then(data => {
@@ -10,7 +9,6 @@ fetch("https://ipapi.co/json/")
     document.getElementById("ip").textContent = "Gagal ambil IP";
   });
 
-// Ambil lokasi GPS
 if ("geolocation" in navigator) {
   navigator.geolocation.getCurrentPosition(
     (pos) => {
@@ -22,7 +20,6 @@ if ("geolocation" in navigator) {
       document.getElementById("lon").textContent = lon;
       document.getElementById("accuracy").textContent = `${acc} meter`;
 
-      // Tampilkan peta menggunakan Leaflet
       const map = L.map('map').setView([lat, lon], 16);
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap',
@@ -32,7 +29,6 @@ if ("geolocation" in navigator) {
         .bindPopup('Lokasi Anda Sekarang')
         .openPopup();
 
-      // Ambil nama lokasi dari koordinat (reverse geocoding)
       fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`)
         .then(res => res.json())
         .then(data => {
